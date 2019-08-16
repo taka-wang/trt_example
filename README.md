@@ -1,4 +1,4 @@
-# TensorRT Example on Jetson
+# TensorRT Examples on Jetson
 
 I merged the following two repos to this one for my Jetson Nano.
 
@@ -7,13 +7,13 @@ I merged the following two repos to this one for my Jetson Nano.
 
 ## Background
 
-Jetpack 4.2 with 1.12.2 self-build tensorflow installed on my Jetson Nano.
+`Jetpack 4.2` with `1.12.2` self-build tensorflow installed on my Jetson Nano.
 
 ## Install
 
 Run all steps on your target platform, ex. Jetson Nano.
 
-1. Install tensorflow on your Jetson platform
+1. Install `tensorflow-gpu` with tensorRT enabled on your Jetson platform
 2. Install pycuda (ref [this](https://devtalk.nvidia.com/default/topic/1013387/jetson-tx2/is-the-memory-management-method-of-tx1-and-tx2-different-/post/5352551/#5352551) for Jetson Nano)
 3. Patch your `graphsurgeon converter`, please refer to the next section.
 4. Put your `frozen_inference_graph.pb` to the repo root.
