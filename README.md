@@ -17,7 +17,7 @@ Run all steps on your target platform, ex. Jetson Nano.
 2. Install pycuda (ref [this](https://devtalk.nvidia.com/default/topic/1013387/jetson-tx2/is-the-memory-management-method-of-tx1-and-tx2-different-/post/5352551/#5352551) for Jetson Nano)
 3. Patch your `graphsurgeon converter`, please refer to the next section.
 4. Put your `frozen_inference_graph.pb` to the repo root.
-5. Modify `config/model_ssdxxx` with your own `numClasses`.
+5. Modify [config/model_ssd_mobilenet_v2_coco_2018_03_29.py](https://github.com/taka-wang/trt_example/blob/master/config/model_ssd_mobilenet_v2_coco_2018_03_29.py#L43) with your own `numClasses`.
 6. Modify `utils/coco.py` to your classes
 7. Run `convery.py` with one picture, ex. `python3 convert.py 1.jpg`
      - this step will generate `uff` and `bin` files on the repo root
