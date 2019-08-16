@@ -13,9 +13,10 @@ import graphsurgeon as gs
 #from config import model_ssd_inception_v2_coco_2017_11_17 as model
 #from config import model_ssd_mobilenet_v1_coco_2018_01_28 as model
 from config import model_ssd_mobilenet_v2_coco_2018_03_29 as model
+import utils.coco as coco_utils # COCO dataset descriptors
+COCO_LABELS = coco_utils.COCO_CLASSES_LIST # change this
 
 ctypes.CDLL("lib/libflattenconcat.so")
-COCO_LABELS = coco_utils.COCO_CLASSES_LIST # change this
 
 # initialize
 TRT_LOGGER = trt.Logger(trt.Logger.INFO)
