@@ -7,7 +7,6 @@ import numpy as np
 import pycuda.autoinit
 import pycuda.driver as cuda
 
-import coco
 import uff
 import tensorrt as trt
 import graphsurgeon as gs
