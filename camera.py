@@ -96,10 +96,6 @@ def parse_commandline_arguments():
         help='desired TensorRT float precision to build an engine with')
     parser.add_argument('-b', '--max_batch_size', type=int, default=1,
         help='max TensorRT engine batch size')
-    parser.add_argument('-w', '--workspace_dir',
-        help='sample workspace directory')
-    parser.add_argument('-fc', '--flatten_concat',
-        help='path of built FlattenConcat plugin')
     parser.add_argument('-d', '--calib_dataset', default='../VOCdevkit/VOC2007/JPEGImages',
         help='path to the calibration dataset')
     parser.add_argument('-c', '--camera', default=True,
@@ -107,9 +103,6 @@ def parse_commandline_arguments():
 
     # Parse arguments passed
     args = parser.parse_args()
-
-    # Verify Paths after adjustments. This also exits script if verification fails
-    PATHS.verify_all_paths()
 
     # Fetch TensorRT engine path and datatype
     args.trt_engine_datatype = TRT_PRECISION_TO_DATATYPE[args.precision]
