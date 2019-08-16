@@ -90,10 +90,16 @@ def parse_commandline_arguments():
 
     # Define script command line arguments
     parser = argparse.ArgumentParser(description='Run object detection inference on input image.')
-    parser.add_argument('-p', '--precision', type=int, choices=[32, 16, 8], default=16,
+    parser.add_argument('--input_img_path', metavar='INPUT_IMG_PATH',
+        help='an image file to run inference on')
+    parser.add_argument('-p', '--precision', type=int, choices=[32, 16, 8], default=32,
         help='desired TensorRT float precision to build an engine with')
     parser.add_argument('-b', '--max_batch_size', type=int, default=1,
         help='max TensorRT engine batch size')
+    parser.add_argument('-w', '--workspace_dir',
+        help='sample workspace directory')
+    parser.add_argument('-fc', '--flatten_concat',
+        help='path of built FlattenConcat plugin')
     parser.add_argument('-d', '--calib_dataset', default='../VOCdevkit/VOC2007/JPEGImages',
         help='path to the calibration dataset')
     parser.add_argument('-c', '--camera', default=True,
